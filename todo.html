@@ -1,0 +1,45 @@
+<html>
+    <head>
+        </head>
+        <body>
+            <input id="itemInput" type="text" placeholder="Enter item" />
+            <button onclick="addItem()">Add</button>
+            <button onclick="deleteButton()">Delete</button>
+
+            <ul id="itemList"></ul>
+            <script>
+                function addItem() { 
+                    let itemValue = document.getElementById("itemInput").value;
+                    if (itemValue !== "") {
+                        let ul = document.getElementById("itemList");
+                        let li = document.createElement("li");
+                        li.textContent = itemValue;
+                        ul.appendChild(li);
+                        document.getElementById("itemInput").value = "";
+                    } else {
+                        alert("Please enter an item.");
+                    }
+                }
+                let deleteButton=document.createElement("button");
+                deleteButton.textContent="Delete";
+                deleteButton.onclick = function() {
+                ul.removeChild(li); 
+                };
+                li.appendChild(deleteButton);      
+
+                const checkbox=document.createElement('input');
+                checkbox.type='checkbox';
+
+                checkbox.addEventListener('change', function(){
+                    if(checkbox.checked){
+                        li.style.textDecoration='line-through';
+                    }
+                    else{
+                        li.style.textDecoration='none';
+                    }
+                });
+                li.appendChild(checkbox);
+
+            </script>
+        </body>
+</html>
